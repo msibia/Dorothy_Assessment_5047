@@ -1,0 +1,37 @@
+version: "1"
+
+project:
+  name: bookit-api
+  type: python
+
+build:
+  commands:
+    - pip install -r requirements.txt
+  
+runtime:
+  python_version: "3.11"
+
+start:
+  command: uvicorn main:app --host 0.0.0.0 --port $PORT --workers 4
+
+health_check:
+  path: /health
+  interval: 30
+  timeout: 5
+  retries: 3
+
+resources:
+  cpu: 1
+  memory: 512
+
+environment:
+  - DATABASE_URL
+  - SECRET_KEY
+  - ALGORITHM
+  - ACCESS_TOKEN_EXPIRE_MINUTES
+  - REFRESH_TOKEN_EXPIRE_DAYS
+  - DEBUG
+  - ALLOWED_ORIGINS
+
+post_deploy:
+  - alembic upgrade head
