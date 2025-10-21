@@ -26,11 +26,10 @@ A comprehensive REST API for managing bookings, services, and reviews built with
 
 **Why PostgreSQL over MongoDB?**
 
-1. **Data Integrity**: Bookings require ACID compliance to prevent double-bookings and ensure data consistency
-2. **Complex Relationships**: Strong foreign key constraints between Users, Services, Bookings, and Reviews
-3. **Transaction Support**: Critical for booking operations that need atomicity
-4. **Mature Ecosystem**: Well-established tools (Alembic for migrations, pgAdmin for management)
-5. **Query Performance**: Excellent support for complex queries with JOINs, crucial for filtering bookings by date ranges and status
+1. **Data Integrity**: Bookings require ACID compliance to prevent double-bookings and ensure data consistency. PostgreSQL edges MongoDB in ACID compliance, 
+2. **Complex Relationships**: Provides strong foreign key constraints between Users, Services, Bookings, and Reviews
+4. **Mature Ecosystem and Supported Tools**: Provides ell-established tools (Alembic for migrations, pgAdmin for management)
+5. **Query Performance**: Excellent support for complex queries with JOINs, which will be crucial in this project for filtering bookings by date ranges and status.
 6. **Check Constraints**: Database-level validation (e.g., rating 1-5, positive prices, valid time ranges)
 
 ### Clean Architecture
