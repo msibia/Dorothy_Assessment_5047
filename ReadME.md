@@ -4,9 +4,9 @@ A comprehensive REST API for managing bookings, services, and reviews built with
 
 ## 🚀 Live Deployment
 
-- **Base URL**: `https://your-app.pipeops.app` (update after deployment)
-- **API Documentation**: `https://your-app.pipeops.app/docs`
-- **ReDoc**: `https://your-app.pipeops.app/redoc`
+- **Base URL**: `https://bookit-assessment.pipeops.net` (update after deployment)
+- **API Documentation**: `https://bookit-assessment.pipeops.net/docs`
+- **ReDoc**: `https://bookit-assessment.pipeops.net/redoc`
 
 ## 📋 Table of Contents
 
