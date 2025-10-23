@@ -106,7 +106,7 @@ The project follows a **three-layer architecture**:
 - **Validation**: Pydantic 2.5
 - **Testing**: Pytest with async support
 - **Server**: Uvicorn with production settings
-- **Deployment**: PipeOps (recommended)
+- **Deployment**: PipeOps 
 
 ## 📁 Project Structure
 
@@ -401,7 +401,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: bookit-db
+          name: bookit_db
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
@@ -409,7 +409,7 @@ services:
         value: 3.11.0
 
 databases:
-  - name: bookit-db
+  - name: bookit_db
     databaseName: bookit
     user: bookit
 ```
@@ -440,7 +440,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/bookit
+      - DATABASE_URL=postgresql://user:password@db:5432/bookit_db
       - SECRET_KEY=${SECRET_KEY}
     depends_on:
       - db
@@ -450,7 +450,7 @@ services:
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=bookit
+      - POSTGRES_DB=bookit_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
